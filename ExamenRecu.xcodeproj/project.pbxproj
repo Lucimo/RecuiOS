@@ -14,6 +14,8 @@
 		335A84F820D8FF920059EDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335A84F620D8FF920059EDDE /* LaunchScreen.storyboard */; };
 		335A850320D8FF920059EDDE /* ExamenRecuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A850220D8FF920059EDDE /* ExamenRecuTests.swift */; };
 		335A850E20D8FF920059EDDE /* ExamenRecuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A850D20D8FF920059EDDE /* ExamenRecuUITests.swift */; };
+		335A851C20D901430059EDDE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A851B20D901430059EDDE /* RegisterViewController.swift */; };
+		335A851E20D901590059EDDE /* Dataholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A851D20D901590059EDDE /* Dataholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		335A850920D8FF920059EDDE /* ExamenRecuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamenRecuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335A850D20D8FF920059EDDE /* ExamenRecuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenRecuUITests.swift; sourceTree = "<group>"; };
 		335A850F20D8FF920059EDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335A851B20D901430059EDDE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		335A851D20D901590059EDDE /* Dataholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,9 @@
 				335A84F120D8FF910059EDDE /* Main.storyboard */,
 				335A84F420D8FF920059EDDE /* Assets.xcassets */,
 				335A84F620D8FF920059EDDE /* LaunchScreen.storyboard */,
+				335A851D20D901590059EDDE /* Dataholder.swift */,
 				335A84F920D8FF920059EDDE /* Info.plist */,
+				335A851B20D901430059EDDE /* RegisterViewController.swift */,
 			);
 			path = ExamenRecu;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335A851C20D901430059EDDE /* RegisterViewController.swift in Sources */,
 				335A84F020D8FF910059EDDE /* ViewController.swift in Sources */,
 				335A84EE20D8FF910059EDDE /* AppDelegate.swift in Sources */,
+				335A851E20D901590059EDDE /* Dataholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
