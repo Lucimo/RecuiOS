@@ -1,0 +1,6 @@
+framework module Pods_ExamenRecuTests {
+  umbrella header "Pods-ExamenRecuTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

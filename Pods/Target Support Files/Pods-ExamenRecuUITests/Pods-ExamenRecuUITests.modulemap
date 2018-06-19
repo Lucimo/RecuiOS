@@ -1,0 +1,6 @@
+framework module Pods_ExamenRecuUITests {
+  umbrella header "Pods-ExamenRecuUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

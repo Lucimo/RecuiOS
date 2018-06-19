@@ -132,7 +132,7 @@ class Dataholder: NSObject {
     @objc optional func DHDDescargaCiudadesCompleta(blnFin:Bool)
     @objc optional func dataHolderRegister(blfin:Bool)
     @objc optional func dataHolderLogin(blfin:Bool)
-    @objc optional func imagen(imagen:UIImage)
+    
 }
 
 
