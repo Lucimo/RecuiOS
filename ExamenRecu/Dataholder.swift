@@ -28,7 +28,7 @@ class Dataholder: NSObject {
     
     func initFirebase(){
         FirebaseApp.configure()
-        fireStoreDB = FireStore.firestore()
+        
         fireStorage = Storage.storage()
         
         
