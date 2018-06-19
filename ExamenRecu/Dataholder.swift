@@ -28,15 +28,9 @@ class Dataholder: NSObject {
     
     func initFirebase(){
         FirebaseApp.configure()
-        fireStoreDB = Firestore.firestore()
+        fireStoreDB = FireStore.firestore()
         fireStorage = Storage.storage()
-        let citiesRef = fireStoreDB?.collection("coordenadas")
         
-        citiesRef?.document().setData([
-            "coordenadas": [90, 00],
-            "titulo": "Testigo segundo try"
-            ]
-        )
         
  }
     func descargarCiudades(delegate:DataHolderDelegate){
