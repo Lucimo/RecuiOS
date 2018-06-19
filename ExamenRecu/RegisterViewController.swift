@@ -17,10 +17,10 @@ class RegisterViewController: UIViewController,DataHolderDelegate {
     @IBOutlet var btnCancelar:UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtEmail?.text = DataHolder.sharedInstance.email
-        txtUser?.text = DataHolder.sharedInstance.user
-        txtPassword?.text = DataHolder.sharedInstance.pass
-        txtRePassword?.text = DataHolder.sharedInstance.repass
+        txtEmail?.text = Dataholder.sharedInstance.email
+        txtUser?.text = Dataholder.sharedInstance.user
+        txtPassword?.text = Dataholder.sharedInstance.pass
+        txtRePassword?.text = Dataholder.sharedInstance.repass
         // Do any additional setup after loading the view.
     }
 
@@ -31,13 +31,13 @@ class RegisterViewController: UIViewController,DataHolderDelegate {
     }
     @IBAction func clickRegister(){
         
-        DataHolder.sharedInstance.email = (txtEmail?.text)!
-        DataHolder.sharedInstance.user = (txtUser?.text)!
-        DataHolder.sharedInstance.pass = (txtPassword?.text)!
-        DataHolder.sharedInstance.repass = (txtRePassword?.text)!
+        Dataholder.sharedInstance.email = (txtEmail?.text)!
+        Dataholder.sharedInstance.user = (txtUser?.text)!
+        Dataholder.sharedInstance.pass = (txtPassword?.text)!
+        Dataholder.sharedInstance.repass = (txtRePassword?.text)!
         
         
-        DataHolder.sharedInstance.Registro(delegate: self, sEmail: (txtEmail?.text)!, sPass: (txtPassword?.text)!)
+        Dataholder.sharedInstance.Registro(delegate: self, sEmail: (txtEmail?.text)!, sPass: (txtPassword?.text)!)
         
         
     }

@@ -8,12 +8,12 @@
 
 import UIKit
 import Firebase
-import FirebaseStorage
+
 class Dataholder: NSObject {
-    static let sharedInstance:DataHolder = DataHolder()
+    static let sharedInstance:Dataholder = Dataholder()
     
     var fireStoreDB:Firestore?
-    
+   
     var miPerfil:Perfil = Perfil()
     var fireStorage:Storage?
     var HMIMG :[String: UIImage]?=[:]
@@ -26,40 +26,17 @@ class Dataholder: NSObject {
     
     func initFirebase(){
         FirebaseApp.configure()
-        fireStoreDB = Firestore.firestore()
-        fireStorage = Storage.storage()
-        let citiesRef = fireStoreDB?.collection("coordenadas")
+        
         
  }
-    func descargarCiudades(delegate:DataHolderDelegate){
-        
-        DataHolder.sharedInstance.fireStoreDB?.collection("cities").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-                delegate.DHDDescargaCiudadesCompleta!(blnFin: false)
-            } else {
-                self.arCiudades=[]
-                for document in querySnapshot!.documents {
-                    let ciudad:City = City()
-                    ciudad.sID=document.documentID
-                    ciudad.setMap(valores: document.data())
-                    self.arCiudades.append(ciudad)
-                    print("\(document.documentID) => \(document.data())")
-                }
-                print("----->>>> ",self.arCiudades.count)
-                delegate.DHDDescargaCiudadesCompleta!(blnFin: true)
-            }
-            //self.tbMiTabla?.reloadData()
-        }
-        
-    }
+   
     func Login(delegate:DataHolderDelegate, sEmail:String, sContrasena:String) {
         print("Hola " + sEmail)
         
         Auth.auth().signIn(withEmail: sEmail, password: sContrasena) {(email, error) in
             if sEmail != ""{
                 
-                let ruta = DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!)
+                let ruta = Dataholder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!)
                 
                 ruta?.getDocument { (document, error) in
                     if document != nil{
@@ -90,7 +67,7 @@ class Dataholder: NSObject {
             else if self.email != "" && self.user != ""{
                 print ("Te registraste")
                 
-                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!).setData(["email"
+                Dataholder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!).setData(["email"
                     :self.email, "nombre":self.user])
                 delegate.dataHolderRegister!(blfin: true)
             }
@@ -102,34 +79,12 @@ class Dataholder: NSObject {
         
     }
     
-    func executeimagen(clave:String, delegate:DataHolderDelegate){
-        if self.HMIMG![clave] == nil{
-            let gsReference = self.fireStorage?.reference(forURL: clave)
-            gsReference?.getData(maxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                if error != nil {
-                    print(error!)
-                }
-                else{
-                    let imgDescargada = UIImage(data: data!)
-                    self.HMIMG?[clave] = imgDescargada
-                    delegate.imagen!(imagen: imgDescargada!)
-                    
-                }
-            }
-            )
-            
-        }
-        else{
-            delegate.imagen!(imagen:self.HMIMG![clave]!)
-        }
-        print("llego")
-        
-    }
+   
     
     
 }
 @objc protocol DataHolderDelegate{
-    @objc optional func DHDDescargaCiudadesCompleta(blnFin:Bool)
+    
     @objc optional func dataHolderRegister(blfin:Bool)
     @objc optional func dataHolderLogin(blfin:Bool)
     

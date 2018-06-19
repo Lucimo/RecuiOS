@@ -16,6 +16,7 @@
 		335A850E20D8FF920059EDDE /* ExamenRecuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A850D20D8FF920059EDDE /* ExamenRecuUITests.swift */; };
 		335A851C20D901430059EDDE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A851B20D901430059EDDE /* RegisterViewController.swift */; };
 		335A851E20D901590059EDDE /* Dataholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A851D20D901590059EDDE /* Dataholder.swift */; };
+		335A852020D90D7A0059EDDE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 335A851F20D90D660059EDDE /* GoogleService-Info.plist */; };
 		5F5D0ADB15D23FFEDCFF3D92 /* Pods_ExamenRecuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0383E04B74F78CA28926C7 /* Pods_ExamenRecuTests.framework */; };
 		7228DCE50BC4BE21FA8413C0 /* Pods_ExamenRecu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4D8EC9362828ADB3D58A17 /* Pods_ExamenRecu.framework */; };
 		9158DB8473B7E81EA7899E2C /* Pods_ExamenRecuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F99635A39A41C148DCD7864 /* Pods_ExamenRecuUITests.framework */; };
@@ -55,6 +56,7 @@
 		335A850F20D8FF920059EDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335A851B20D901430059EDDE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		335A851D20D901590059EDDE /* Dataholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataholder.swift; sourceTree = "<group>"; };
+		335A851F20D90D660059EDDE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F99635A39A41C148DCD7864 /* Pods_ExamenRecuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExamenRecuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ADEDEA3C7714226B51D68D /* Pods-ExamenRecuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamenRecuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExamenRecuUITests/Pods-ExamenRecuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		772CF02D7125FED962ADC187 /* Pods-ExamenRecuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamenRecuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExamenRecuTests/Pods-ExamenRecuTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				335A84F620D8FF920059EDDE /* LaunchScreen.storyboard */,
 				335A851D20D901590059EDDE /* Dataholder.swift */,
 				335A84F920D8FF920059EDDE /* Info.plist */,
+				335A851F20D90D660059EDDE /* GoogleService-Info.plist */,
 				335A851B20D901430059EDDE /* RegisterViewController.swift */,
 			);
 			path = ExamenRecu;
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				335A84F820D8FF920059EDDE /* LaunchScreen.storyboard in Resources */,
+				335A852020D90D7A0059EDDE /* GoogleService-Info.plist in Resources */,
 				335A84F520D8FF920059EDDE /* Assets.xcassets in Resources */,
 				335A84F320D8FF910059EDDE /* Main.storyboard in Resources */,
 			);
