@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 class Dataholder: NSObject {
     static let sharedInstance:Dataholder = Dataholder()
     
@@ -30,6 +31,7 @@ class Dataholder: NSObject {
         fireStoreDB = Firestore.firestore()
         fireStorage = Storage.storage()
         let citiesRef = fireStoreDB?.collection("coordenadas")
+        
         citiesRef?.document().setData([
             "coordenadas": [90, 00],
             "titulo": "Testigo segundo try"
@@ -57,6 +59,29 @@ class Dataholder: NSObject {
             }
             
         }
+        
+    }
+    func executeimagen(clave:String, delegate:DataHolderDelegate){
+        if self.HMIMG![clave] == nil{
+            let gsReference = self.fireStorage?.reference(forURL: clave)
+            gsReference?.getData(maxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print(error!)
+                }
+                else{
+                    let imgDescargada = UIImage(data: data!)
+                    self.HMIMG?[clave] = imgDescargada
+                    delegate.imagen!(imagen: imgDescargada!)
+                    
+                }
+            }
+            )
+            
+        }
+        else{
+            delegate.imagen!(imagen:self.HMIMG![clave]!)
+        }
+        print("llego")
         
     }
    
@@ -109,7 +134,7 @@ class Dataholder: NSObject {
     @objc optional func DHDDescargaCiudadesCompleta(blnFin:Bool)
     @objc optional func dataHolderRegister(blfin:Bool)
     @objc optional func dataHolderLogin(blfin:Bool)
-    
+     @objc optional func imagen(imagen:UIImage)
 }
 
 

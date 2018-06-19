@@ -39,10 +39,10 @@ class VCPrincipalViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TvcmiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1")as! TvcmiCelda
+        let cell:TableViewCellmiCelda = tableView.dequeueReusableCell(withIdentifier: "micelda1")as! TableViewCellmiCelda
         
-        cell.lblNombre?.text = Dataholder.sharedInstance.arCiudades[indexPath.row].sName
-        cell.descargarImagenes(uri: Dataholder.sharedInstance.arCiudades[indexPath.row].sfoto!)
+        cell.lblCelda?.text = Dataholder.sharedInstance.arCiudades[indexPath.row].sName
+        cell.descargarImagenes(url: Dataholder.sharedInstance.arCiudades[indexPath.row].sfoto!)
         
         return cell
         
@@ -56,4 +56,5 @@ class VCPrincipalViewController: UIViewController, UITableViewDelegate, UITableV
     }
     */
 
+}
 }

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TableViewCellmiCelda: UITableViewCell {
+class TableViewCellmiCelda: UITableViewCell, DataHolderDelegate{
 
-    @IBOutlet weak var lblCelda: UILabel!
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet var lblCelda: UILabel!
+    @IBOutlet var img: UIImageView!
+    var ImagenDescargada:UIImage?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +23,11 @@ class TableViewCellmiCelda: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    func descargarImagenes(url:String){
+        self.img?.image = nil
+        Dataholder.sharedInstance.executeimagen(clave: url, delegate: self)
+}
+    func imagen(imagen: UIImage) {
+        self.img?.image = imagen
+}
 }
