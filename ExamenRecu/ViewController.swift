@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataHolderDelegate {
 
     @IBOutlet weak var btnLoguear: UIButton!
    
@@ -27,11 +27,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-  /*  @IBAction func clickLogin() {
+    @IBAction func clickLogin() {
         Dataholder.sharedInstance.Login(delegate: self as! DataHolderDelegate, sEmail: (txtEmail?.text)!, sContrasena: txtPass.text!)
     }
-    */
+    
     func dataHolderLogin(blfin: Bool) {
         if blfin==true{
             self.performSegue(withIdentifier: "transitionLogin", sender: self)

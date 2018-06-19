@@ -100,7 +100,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aym-zI-fuj"/>
+                                    <action selector="clickLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2e-dv-AAg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qee-75-LAM">
