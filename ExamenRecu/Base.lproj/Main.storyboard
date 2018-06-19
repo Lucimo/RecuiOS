@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Yjr-7N-4m4">
             <objects>
-                <viewController id="UCU-es-UVc" sceneMemberID="viewController">
+                <viewController id="UCU-es-UVc" customClass="RegisterViewController" customModule="ExamenRecu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cwd-xV-E7F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,11 +55,23 @@
                                 <rect key="frame" x="275" y="516" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aceptar"/>
+                                <connections>
+                                    <action selector="clickRegister" destination="UCU-es-UVc" eventType="touchUpInside" id="n1u-LB-n7z"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="trregistro" id="GcX-9m-qj8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="azt-Zk-D4a"/>
                     </view>
+                    <connections>
+                        <outlet property="btnAceptar" destination="ryF-Hs-y09" id="ryg-zL-xhs"/>
+                        <outlet property="btnCancelar" destination="6CG-ka-eX9" id="IAm-WV-Fa0"/>
+                        <outlet property="txtEmail" destination="lb2-vU-9E4" id="FfH-vz-CAF"/>
+                        <outlet property="txtPassword" destination="4Vz-Gq-hGT" id="HRm-Yy-n13"/>
+                        <outlet property="txtRePassword" destination="cS1-Bf-Udw" id="3Id-sZ-NsP"/>
+                        <outlet property="txtUser" destination="5A7-6L-XaE" id="pTl-Pr-nUu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A22-U7-9JA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
