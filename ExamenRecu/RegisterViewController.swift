@@ -15,6 +15,9 @@ class RegisterViewController: UIViewController,DataHolderDelegate {
     @IBOutlet var txtRePassword:UITextField?
     @IBOutlet var btnAceptar:UIButton?
     @IBOutlet var btnCancelar:UIButton?
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         txtEmail?.text = Dataholder.sharedInstance.email
@@ -24,11 +27,15 @@ class RegisterViewController: UIViewController,DataHolderDelegate {
         // Do any additional setup after loading the view.
     }
 
+   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
     }
+    
+    
     @IBAction func clickRegister(){
         
         Dataholder.sharedInstance.email = (txtEmail?.text)!

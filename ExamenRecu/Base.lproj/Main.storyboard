@@ -50,6 +50,9 @@
                                 <rect key="frame" x="43" y="516" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="4Mn-Fv-fZG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryF-Hs-y09">
                                 <rect key="frame" x="275" y="516" width="54" height="30"/>
@@ -57,7 +60,6 @@
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
                                     <action selector="clickRegister" destination="UCU-es-UVc" eventType="touchUpInside" id="n1u-LB-n7z"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="trregistro" id="GcX-9m-qj8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,16 +73,16 @@
                         <outlet property="txtPassword" destination="4Vz-Gq-hGT" id="HRm-Yy-n13"/>
                         <outlet property="txtRePassword" destination="cS1-Bf-Udw" id="3Id-sZ-NsP"/>
                         <outlet property="txtUser" destination="5A7-6L-XaE" id="pTl-Pr-nUu"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="trregistro" id="6Yx-QP-7BS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A22-U7-9JA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="609"/>
+            <point key="canvasLocation" x="606" y="654"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExamenRecu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -97,6 +99,9 @@
                                 <rect key="frame" x="170" y="397" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aym-zI-fuj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qee-75-LAM">
                                 <rect key="frame" x="159" y="467" width="57" height="30"/>
@@ -124,7 +129,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="qDj-cY-V0u" id="NtM-T2-rYW"/>
+                        <outlet property="txtPass" destination="dvB-Sk-0q6" id="RNC-xo-D0R"/>
+                        <segue destination="f5Y-af-jDL" kind="show" identifier="transitionLogin" id="pV7-tr-MSg"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="-94"/>
         </scene>
@@ -157,7 +168,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" id="QSh-fp-Ql9" customClass="TVCMiCelda" customModule="practicaIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="micelda1" id="QSh-fp-Ql9" customClass="TVCMiCelda" customModule="ExamenRecu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QSh-fp-Ql9" id="NM7-ti-24I">
@@ -213,4 +224,7 @@
             <point key="canvasLocation" x="1353" y="-94"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6Yx-QP-7BS"/>
+    </inferredMetricsTieBreakers>
 </document>

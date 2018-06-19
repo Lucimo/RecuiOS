@@ -8,16 +8,17 @@
 
 import UIKit
 import Firebase
-
+import FirebaseAuth
 class Dataholder: NSObject {
     static let sharedInstance:Dataholder = Dataholder()
     
     var fireStoreDB:Firestore?
    
-    var miPerfil:Perfil = Perfil()
+   
+   
     var fireStorage:Storage?
     var HMIMG :[String: UIImage]?=[:]
-    var arCiudades:[City] = []
+    
     
     var user:String = ""
     var email:String = ""
@@ -26,37 +27,38 @@ class Dataholder: NSObject {
     
     func initFirebase(){
         FirebaseApp.configure()
-        
+        fireStoreDB = Firestore.firestore()
+        fireStorage = Storage.storage()
+        let citiesRef = fireStoreDB?.collection("coordenadas")
+        citiesRef?.document().setData([
+            "coordenadas": [90, 00],
+            "titulo": "Testigo segundo try"
+            ]
+        )
         
  }
    
-    func Login(delegate:DataHolderDelegate, sEmail:String, sContrasena:String) {
+   func Login(delegate:DataHolderDelegate, sEmail:String, sContrasena:String) {
         print("Hola " + sEmail)
         
         Auth.auth().signIn(withEmail: sEmail, password: sContrasena) {(email, error) in
             if sEmail != ""{
                 
-                let ruta = Dataholder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!)
                 
-                ruta?.getDocument { (document, error) in
-                    if document != nil{
-                        
-                        DataHolder.sharedInstance.miPerfil.setMap(valores: (document?.data())!)
+                
                         
                         delegate.dataHolderLogin!(blfin: true)
                         
                     }
-                    else{
-                        print(error!)
-                    }
-                }
-            }
+                
             else{
                 print("Fallo al logearse")
                 delegate.dataHolderLogin!(blfin: false)
             }
         }
     }
+ 
+ 
     
     func Registro(delegate:DataHolderDelegate,sEmail:String, sPass:String) {
         Auth.auth().createUser(withEmail: email, password: pass){
@@ -67,8 +69,7 @@ class Dataholder: NSObject {
             else if self.email != "" && self.user != ""{
                 print ("Te registraste")
                 
-                Dataholder.sharedInstance.fireStoreDB?.collection("Perfiles").document((email?.uid)!).setData(["email"
-                    :self.email, "nombre":self.user])
+                
                 delegate.dataHolderRegister!(blfin: true)
             }
             else{
@@ -78,7 +79,6 @@ class Dataholder: NSObject {
         }
         
     }
-    
    
     
     
