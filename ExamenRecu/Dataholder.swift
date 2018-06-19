@@ -18,7 +18,7 @@ class Dataholder: NSObject {
    
     var fireStorage:Storage?
     var HMIMG :[String: UIImage]?=[:]
-    
+    var arCiudades:[Ciudades] = []
     
     var user:String = ""
     var email:String = ""
@@ -37,6 +37,28 @@ class Dataholder: NSObject {
         )
         
  }
+    func descargarCiudades(delegate:DataHolderDelegate){
+        
+        Dataholder.sharedInstance.fireStoreDB?.collection("cities").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                delegate.DHDDescargaCiudadesCompleta!(blnFin: false)
+            } else {
+                self.arCiudades=[]
+                for document in querySnapshot!.documents {
+                    let ciudad:Ciudades = Ciudades()
+                    ciudad.sID=document.documentID
+                    ciudad.setMap(valores: document.data())
+                    self.arCiudades.append(ciudad)
+                    print("\(document.documentID) => \(document.data())")
+                }
+                print("----->>>> ",self.arCiudades.count)
+                delegate.DHDDescargaCiudadesCompleta!(blnFin: true)
+            }
+            
+        }
+        
+    }
    
    func Login(delegate:DataHolderDelegate, sEmail:String, sContrasena:String) {
         print("Hola " + sEmail)
@@ -84,7 +106,7 @@ class Dataholder: NSObject {
     
 }
 @objc protocol DataHolderDelegate{
-    
+    @objc optional func DHDDescargaCiudadesCompleta(blnFin:Bool)
     @objc optional func dataHolderRegister(blfin:Bool)
     @objc optional func dataHolderLogin(blfin:Bool)
     
