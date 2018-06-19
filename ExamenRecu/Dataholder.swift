@@ -14,9 +14,6 @@ class Dataholder: NSObject {
     static let sharedInstance:Dataholder = Dataholder()
     
     var fireStoreDB:Firestore?
-   
-   
-   
     var fireStorage:Storage?
     var HMIMG :[String: UIImage]?=[:]
     var arCiudades:[Ciudades] = []
