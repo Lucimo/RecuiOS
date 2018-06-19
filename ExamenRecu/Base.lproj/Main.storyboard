@@ -153,12 +153,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmk-Xk-MSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="492"/>
+            <point key="canvasLocation" x="2831" y="-281"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="aMW-KL-Lyb">
+            <objects>
+                <viewController id="Lv0-OJ-xoY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wDK-eg-7tE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="j6g-7C-wil"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="vEc-TD-eP2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gr-2c-UYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="348"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Dbe-K6-2H1">
             <objects>
-                <viewController id="ZzM-03-J95" sceneMemberID="viewController">
+                <viewController id="ZzM-03-J95" customClass="VCPrincipalViewController" customModule="ExamenRecu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCO-Wc-2Cs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,6 +216,9 @@
                         <viewLayoutGuide key="safeArea" id="5pU-iK-G54"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="3w9-gz-4lD"/>
+                    <connections>
+                        <outlet property="miTabla" destination="xoQ-xh-R81" id="NFL-Oo-aIx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyT-DD-HKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +236,7 @@
                     <connections>
                         <segue destination="ZzM-03-J95" kind="relationship" relationship="viewControllers" id="11h-8A-WCR"/>
                         <segue destination="Uet-Lh-iTI" kind="relationship" relationship="viewControllers" id="Z2R-LA-Udr"/>
+                        <segue destination="Lv0-OJ-xoY" kind="relationship" relationship="viewControllers" id="Nq1-AV-Ffw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zp-JF-HPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
