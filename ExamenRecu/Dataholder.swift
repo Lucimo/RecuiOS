@@ -58,7 +58,7 @@ class Dataholder: NSObject {
         }
     }
  
- 
+ //hola
     
     func Registro(delegate:DataHolderDelegate,sEmail:String, sPass:String) {
         Auth.auth().createUser(withEmail: email, password: pass){
